@@ -1,0 +1,261 @@
+/* Dark theme */
+
+QWidget#TabBarButtonsContainer {
+    background-color: rgb(25, 25, 25);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: -10px;
+}
+
+QMainWindow {
+    background: rgb(25, 25, 25);
+}
+
+
+QPushButton {
+    background-color: rgb(75, 75, 75);
+    color: rgb(200, 200, 200);
+    border: none;
+    border-radius: 9px;
+    padding: 5px 6px;
+    font-size: 11px;
+}
+
+QPushButton:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+QPushButton:focus {
+    background-color: rgb(25, 25, 50);
+}
+
+QPushButton:pressed {
+    padding-top: 6px;
+}
+
+QWidget#MainUI, QWidget#OptionsBar {
+    background-color: rgb(25, 25, 25);
+    border: none;
+    border-radius: 9px;
+}
+
+QMainWindow {
+    background: rgb(255, 255, 255);
+}
+
+QLabel {
+    color: rgb(200, 200, 200);
+    font-size: 11px;
+    background-color: rgb(240, 240, 240);
+}
+
+QFrame#sidebar, QFrame#ToolbarFrame {
+    background-color: rgb(25, 25, 25);
+    color: rgb(200, 200, 200);
+    border: none;
+    border-radius: 9px;
+    padding: 3px;
+}
+
+QWidget#TabItem {
+    background-color: rgb(25, 25, 25);
+    color: rgb(200, 200, 200);
+    border-radius: 9px;
+    padding: 3px;
+}
+
+QWebEngineView {
+    border: none;
+    border-radius: 9px;
+}
+
+QCheckBox {
+    background-color: rgb(25, 25, 25);
+    color: rgb(200, 200, 200);
+    border: none;
+    border-radius: 9px;
+    padding: 5px 6px;
+    font-size: 11px;
+}
+
+QComboBox {
+    border: none;
+    background-color: rgb(25, 25, 25);
+    color: rgb(200, 200, 200);
+    border-radius: 9px;
+    padding: 5px 6px;
+    font-size: 11px;
+}
+
+QComboBox::down-arrow {
+    background: url(../IconApp/toolbar/note_inf.png) no-repeat center;
+    width: 20px;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 20px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: rgb(25, 25, 25);
+    color: rgb(200, 200, 200);
+}
+
+QTabBar::tab {
+    background: rgb(75, 75, 75);
+    margin: 1px;
+    color: rgb(200, 200, 200);
+    border: none;
+    border-radius: 9px;
+    padding: 5px 6px;
+    font-size: 11px;
+}
+QTabBar#EditorTabs::tab {
+    background: none;
+    color: rgb(200, 200, 200);
+    border-radius: none;
+    padding: 5px 5px;
+}
+
+QTabBar::tab:selected {
+    background: rgb(25, 25, 50);
+}
+QTabBar#EditorTabs::tab:selected {
+    background: none;
+    border-bottom: 2px solid rgb(25, 25, 50);
+}
+
+QTabWidget::pane {
+    border-radius: 5px;
+    background-color: rgb(25, 25, 25);
+    padding: 5px;
+}
+QTabWidget#MainTabs::pane {
+    background-color: rgb(25, 25, 25);
+    border: 1px solid gray;
+    border-radius: 4px;
+    top: -1px;
+}
+
+QLineEdit {
+    background-color: rgb(25, 25, 25);
+    border: 1px solid rgb(25, 25, 50);
+    border-radius: 9px;
+    padding: 5px;
+    font-size: 11px;
+    color: rgb(200, 200, 200);
+}
+
+QLineEdit:focus {
+    border-color: rgb(25, 25, 50);
+}
+
+QMenu {
+    background-color: rgb(25, 25, 25);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+QMenu::item {
+    background-color: rgb(25, 25, 25);
+    color: rgb(200, 200, 200);
+    padding: 8px 20px;
+    font-size: 11px;
+    border-radius: 9px;
+}
+
+QMenu::item:hover {
+    background-color: rgb(25, 25, 50);
+    color: white;
+}
+
+QMenu::item:selected {
+    background-color: rgb(25, 25, 50);
+    color: white;
+}
+
+QMenu::item:has-submenu {
+    padding-right: 30px;
+}
+
+QMenu::item:has-submenu:after {
+    color: rgb(50, 50, 50);
+    padding-left: 5px;
+}
+
+QSplitter::handle {
+    background-color: rgb(75, 75, 75);
+    border-radius: 5px;
+}
+
+QSplitter::handle:pressed {
+    background-color: rgb(25, 25, 50);
+}
+
+/* QToolBox */
+QToolBox {
+    background-color: rgb(25, 25, 25);
+    color: rgb(200, 200, 200);
+    border: none;
+    border-radius: 9px;
+    padding: 5px;
+}
+
+QToolBox::tab {
+    background-color: rgb(25, 25, 25);
+    color: rgb(200, 200, 200);
+    border: none;
+    border-radius: 9px;
+    padding: 5px 6px;
+    font-size: 11px;
+}
+
+QToolBox::tab:selected {
+    background-color: rgb(25, 25, 50);
+}
+
+/* Scroll bar */
+QScrollBar:vertical {
+    border: none;
+    background: rgb(25, 25, 25);
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgb(75, 75, 75);
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar:horizontal {
+    border: none;
+    background: rgb(25, 25, 25);
+    height: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: rgb(75, 75, 75);
+    min-width: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background: none;
+    height: 0px;
+}
+
+QDialogButtonBox {
+    background-color: rgb(25, 25, 25);
+    border: none;
+    border-radius: 9px;
+    padding: 5px;
+}
+
+QGraphicsView {
+    background-color: rgb(25, 25, 25);
+    border: none;
+    border-radius: 9px;
+}

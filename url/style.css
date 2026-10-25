@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(225, 225, 225);
+    color: rgb(50, 50, 50);
+    font-family: "Arial", sans-serif;
+}
+
+.support {
+    padding: 10px;
+    margin: 20px;
+}
+
+.support a {
+    color: rgb(50, 50, 50);
+    background-color: rgb(175, 175, 175);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.support a:hover {
+    background-color: rgb(190, 190, 190);
+}
+
+.support div {
+    padding: 10px;
+    width: 100%;
+}
