@@ -1,6 +1,6 @@
-import json
 from PyQt5.QtWidgets import QDialog, QVBoxLayout, QHBoxLayout, QPushButton, QListWidget, QFileDialog
-from PyQt5.QtCore import Qt
+
+from ..config import load_config
 
 class WelcomeDialog(QDialog):
     def __init__(self, parent=None, flags=None):
@@ -8,12 +8,14 @@ class WelcomeDialog(QDialog):
 
         self.setWindowTitle(self.tr("Welcome !"))
         self.setGeometry(100, 100, 400, 300)
+        self.selected_file = None
 
         layout = QVBoxLayout(self)
 
-        self.list_widget = QListWidget() # Liste des fichiers récents
-        
-        # self.list_widget.itemClicked.connect(self.item_clicked)
+        self.list_widget = QListWidget()
+        for file_path in load_config().get("recent_files", []):
+            self.list_widget.addItem(file_path)
+        self.list_widget.itemDoubleClicked.connect(self.open_recent_file)
         layout.addWidget(self.list_widget)
 
         button_layout = QHBoxLayout()
@@ -31,39 +33,25 @@ class WelcomeDialog(QDialog):
         self.setLayout(layout)
 
     def new(self):
-        #ferme la fenêtre de bienvenue
-        self.close()
+        self.accept()
 
     def open_file(self):
+        current_item = self.list_widget.currentItem()
+        if current_item is not None:
+            self.selected_file = current_item.text()
+            self.accept()
+            return
         # Ouvrir un fichier via un QFileDialog
-        file_name, _ = QFileDialog.getOpenFileName(self, self.tr("Open a projetc"), "", "Score Files (*.score);;Xml music (*.xml);;All Files (*)")
-        
+        file_name, _ = QFileDialog.getOpenFileName(
+            self,
+            self.tr("Open a project"),
+            "",
+            self.tr("TEXTA scores (*.score)"),
+        )
         if file_name:
-            try:
-                with open(file_name, 'r') as file:
-                    content = file.read()
-                    
-                    # Ajouter une méthode pour découper les objets JSON concaténés
-                    json_objects = []
-                    decoder = json.JSONDecoder()
+            self.selected_file = file_name
+            self.accept()
 
-                    pos = 0
-                    while pos < len(content):
-                        try:
-                            obj, index = decoder.raw_decode(content, pos)
-                            json_objects.append(obj)
-                            pos = index
-                        except ValueError as e:
-                            print(f"Erreur de décodage à la position {pos}: {e}")
-                            break
-
-                    # Charger chaque objet JSON dans le canvas
-                    for obj in json_objects:
-                        self.score_editor.canvas.load_canvas_data(obj)
-
-                    print(f"Fichier .score chargé avec succès : {file_name}")
-
-            except json.JSONDecodeError as e:
-                print(f"Erreur de décodage JSON dans le fichier .score : {e}")
-            except Exception as e:
-                print(f"Erreur lors de l'ouverture du fichier : {e}")
+    def open_recent_file(self, item):
+        self.selected_file = item.text()
+        self.accept()

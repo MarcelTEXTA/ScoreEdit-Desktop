@@ -1,0 +1,113 @@
+{
+  "clef": "sol",
+  "accidentals": [],
+  "measures": [
+    {
+      "position": {
+        "x": 50,
+        "y": 50
+      },
+      "notes": [
+        {
+          "position": {
+            "x": 105,
+            "y": 80
+          },
+          "type": "noire"
+        },
+        {
+          "position": {
+            "x": 150,
+            "y": 70
+          },
+          "type": "noire"
+        },
+        {
+          "position": {
+            "x": 183,
+            "y": 80
+          },
+          "type": "noire"
+        },
+        {
+          "position": {
+            "x": 217,
+            "y": 70
+          },
+          "type": "noire"
+        }
+      ],
+      "symbols": [],
+      "time_signature": [
+        4,
+        4
+      ],
+      "key_signature": [],
+      "clef": "sol"
+    },
+    {
+      "position": {
+        "x": 250,
+        "y": 50
+      },
+      "notes": [
+        {
+          "position": {
+            "x": 279,
+            "y": 70
+          },
+          "type": "noire"
+        }
+      ],
+      "symbols": [],
+      "time_signature": [
+        4,
+        4
+      ],
+      "key_signature": [],
+      "clef": "sol"
+    }
+  ],
+  "notes": [
+    {
+      "position": {
+        "x": 105,
+        "y": 80
+      },
+      "type": "noire"
+    },
+    {
+      "position": {
+        "x": 150,
+        "y": 70
+      },
+      "type": "noire"
+    },
+    {
+      "position": {
+        "x": 183,
+        "y": 80
+      },
+      "type": "noire"
+    },
+    {
+      "position": {
+        "x": 217,
+        "y": 70
+      },
+      "type": "noire"
+    },
+    {
+      "position": {
+        "x": 279,
+        "y": 70
+      },
+      "type": "noire"
+    }
+  ],
+  "time_signature": [
+    4,
+    4
+  ],
+  "symbols": []
+}

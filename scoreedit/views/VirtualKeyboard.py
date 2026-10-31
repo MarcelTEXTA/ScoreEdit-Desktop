@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QPushButton, QVBoxLayout, QWidget, QHBoxLayout
+from PyQt5.QtCore import QPoint
 
 class VirtualKeyboard(QWidget):
     def __init__(self, parent, main_window=None):
@@ -21,13 +22,18 @@ class VirtualKeyboard(QWidget):
 
     def create_keyboard(self):
         """Crée des boutons représentant les touches d'un piano."""
-        keys = ['C', 'D', 'E', 'F', 'G', 'A', 'B']  # Notes de base
+        keys = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
         self.buttons = {}  # Dictionnaire pour stocker les boutons
 
+        black_keys = {"C#", "D#", "F#", "G#", "A#"}
         for key in keys:
             btn = QPushButton(key)
-            btn.setFixedSize(50, 100)
-            btn.setStyleSheet("background-color: white;")  # Blanche pour les touches naturelles
+            btn.setFixedSize(38, 72 if key in black_keys else 100)
+            btn.setStyleSheet(
+                "background-color: #333; color: white;"
+                if key in black_keys
+                else "background-color: white; color: black;"
+            )
 
             # Connecter chaque bouton à la méthode qui gère les clics
             btn.clicked.connect(lambda checked, k=key: self.on_key_pressed(k))
@@ -38,5 +44,6 @@ class VirtualKeyboard(QWidget):
 
     def on_key_pressed(self, key):
         """Gère l'ajout d'une note à la partition lorsqu'une touche est pressée."""
-        # self.parentWidget().add_note_to_score(key)
-        pass
+        target = self.main_window
+        if hasattr(target, "add_note_to_score"):
+            target.add_note_to_score(key)

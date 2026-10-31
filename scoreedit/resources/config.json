@@ -1,1 +1,11 @@
-{"first_open": false, "theme": "light", "username": "", "password": "", "language": "Fran\u00e7ais", "default_directory": "/home/user/Music/TextaScores", "default_format": "score", "file_dialog": false, "experience_plus": false, "tooltips": true, "startup": false, "user_interface": "horizontal", "animation": true, "score_display": "horizontal", "shortcut": "default"}
+{
+  "first_open": false,
+  "theme": "light",
+  "language": "French",
+  "default_directory": "",
+  "default_format": "score",
+  "animation": true,
+  "midi_tempo": 120,
+  "midi_velocity": 96,
+  "recent_files": []
+}
