@@ -1,5 +1,3 @@
-"""Compatibility launcher; the application lives in :mod:`scoreedit`."""
-
 from scoreedit.app import MainWindow, main
 
 
